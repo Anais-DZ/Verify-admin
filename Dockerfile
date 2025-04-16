@@ -9,5 +9,3 @@ RUN docker-php-ext-install pdo pdo_mysql
 
 # Expose le port 80 pour que l'application soit accessible via HTTP
 EXPOSE 80
-
-COPY env.php /var/www/html/env.php
