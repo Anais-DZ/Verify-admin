@@ -1,7 +1,7 @@
 <?php
 
     // Démarrage de la $_SESSION pour pouvoir y accéder
-    session_start();
+    // session_start();
 
     //Création de la classe GenericController
     class GenericController {

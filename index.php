@@ -1,7 +1,7 @@
 <?php
 
     //INCLUDES
-    include './env.php';
+    // include './env.php';
     include './utils/utils.php';
     include './model/modelWaste.php';
     include './model/modelContainer.php';
