@@ -1,0 +1,79 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bandeHorizontale1 {
+    height: 4px;
+    margin: 5px 0;
+    background-color: #564E4E;
+    width: 90%;
+}
+
+.bandeHorizontale2 {
+    height: 2px;
+    background-color: #564E4E;
+    width: 80%;
+}
+
+.contact img {
+    width: 130px;
+    height: auto;
+    left: 35px;
+    top: -70px;
+    position: absolute;
+}
+
+.contact textarea {
+    resize: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-style: italic;
+    box-sizing: border-box;
+    font-family: "Fredoka";
+    width: 100%;
+    padding: 10px 10px;
+}
+
+.contact textarea:focus  {
+    background: #c0ec5949;
+    color: black;
+}
+
+#charCount {
+    font-family: "Fredoka";
+    text-align: right;
+    font-size: 12px;
+    margin-top: 5px;
+    color: #555;
+}
+
+#errorMessage, #mailErrorMessage {
+    color: rgb(210, 43, 43);
+    font-family: "Fredoka";
+    font-size: 14px;
+    text-align: center;
+    margin: 5px 20px 0;
+}
+
+#submitButtonContact {
+    background-color: #564E4E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor:pointer;
+    font-size: 30px;
+    font-family: 'Cabin Sketch';
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.35);
+    text-align: center;
+    margin: 55px 20px;
+    padding: 10px 25px;
+}
+
+#submitButtonContact:disabled {
+    background-color: rgba(255, 0, 0, 0.162);
+    cursor: not-allowed;
+}
+

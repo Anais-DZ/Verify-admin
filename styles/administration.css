@@ -1,0 +1,113 @@
+.adminForm {
+    font-family: 'Fredoka';
+    padding: 30px 0;
+    margin-bottom: 60px;
+    width: 90%;
+    height: auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url(../Images/carton-body.webp);
+    box-shadow: 0 4px 8px #564e4e61;
+    border-radius: 8px;
+    max-width: 500px;
+    outline: 0.5px solid #4f3e2776;
+    outline-offset: -7px;
+}
+
+
+#titleList {
+    margin: 60px 0 10px;
+    font-family: "Cabin sketch";
+    font-weight: bold;
+    font-size: 32px;
+    color: #564E4E;
+    text-align: center;
+}
+
+.adminForm input , .adminForm select {
+    width: 80%;
+    border-radius: 5px;
+    border: none;
+    color: #564E4E;
+    font-size: 16px;
+    font-style: italic;
+    box-sizing: border-box;
+    font-family: 'Fredoka';
+    padding: 10px 10px;
+    margin: 10px 0;
+}
+
+.adminForm label {
+    font-family: 'Fredoka';
+    font-size: 22px;
+    color: #564E4E;
+    margin-top: 10px !important;
+}
+
+.addWasteAdmin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.submitWaste {
+    background-color: #564E4E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor:pointer;
+    font-size: 22px;
+    font-family: 'Cabin Sketch';
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.523);
+    text-align: center;
+    padding: 10px 25px;
+    margin: 0;
+}
+
+table {
+    border-radius: 5px;
+    box-shadow: 0 4px 8px #564e4e2f;
+    width: 120vw;
+    height: auto;
+    background-color: white;
+    padding: 30px;
+    margin: 30px 50px;
+    border: none;
+    text-align: center;
+    margin-bottom: 45px;
+    color: #564E4E;
+}
+
+th {
+    font-size: 20px;
+    font-family: 'Cabin Sketch';
+    font-weight: bold;
+    padding: 10px 15px;
+    background-color: #86d15b49;
+}
+
+td {
+    font-family: 'Fredoka';
+    font-size: 18px;
+    padding: 5px 15px; 
+    background-color: #86d15b05;
+}
+
+.message {
+    color: #564E4E;
+    margin: 25px;
+    text-align: center;
+    font-family: 'fredoka';
+}
+
+.delete {
+    color: rgb(247, 27, 27);  
+    font-size:24px; 
+    font-family: fredoka; 
+    padding:0 10px; 
+    border: 1px, solid,rgb(190, 189, 189); 
+    background: white; 
+    border-radius: 5px; 
+    cursor:pointer;
+}

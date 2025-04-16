@@ -1,0 +1,641 @@
+.indexContainer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carouselContainer {
+    margin: 70px 0 20px;
+    max-width: 410px;
+    overflow: hidden;
+    width: 95vw;
+    height: auto;
+    border-radius: 8px;
+}
+
+.carouselContainer h2 {
+    font-family: "cabin sketch";
+    font-size: 30px;
+    color: #564E4E;
+    text-align: center;
+    margin: 15px 0 5px;
+    font-weight: 700;
+}
+
+.carouselInner {
+    height: 150px;
+    width: auto;
+    margin: 0;
+    list-style-type: none;
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    outline: 2px dashed #93d35398;
+    outline-offset: -7px;
+    box-shadow: 0 4px 6px #564e4e61;
+}
+
+.carousel {
+    height: 190px;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slide {
+    height: auto;
+    font-family: "fredoka";
+    font-size: 22px;
+    text-align: center;
+    color: #564E4E;
+}
+
+.slide p {
+    font-size: 22px;
+    margin: 0 0 0;
+}
+
+.littleSlide {
+    padding: 0 10px;
+}
+
+.carouselControl {
+    cursor: pointer;
+    width: 40px;
+}
+
+.carouselControl.prev {
+    margin-right: 10px;
+}
+
+.carouselControl.next {
+    margin-left: 10px;
+}
+
+#fonctionsPremieres {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rechercheDechets {
+    width: 320px;
+    margin: 30px 0 0;
+    max-height: auto;
+    outline: 0.5px solid #564e4e76;
+    outline-offset: -6px;
+    padding: 0 15px;
+}
+
+.rechercheDechets h2 {
+    font-family: "Cabin sketch";
+    font-weight: 700;
+    font-size: 32px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 25px 20px 10px;
+    color: #564E4E;
+    text-shadow:
+      0.5px 0.5px 1px #ffffff,
+      -0.5px 0.5px 1px #ffffff,
+      -0.5px -0.5px 1px #ffffff,
+      0.5px -0.5px 1px #ffffff;
+}
+
+.rechercheDechets p {
+    font-family: "fredoka";
+    color: #564E4E;
+    text-align: center;
+    font-size: 18px;
+    margin: 15px 10px 30px;
+}
+
+.searchBar {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.46);
+    border-radius: 12px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.searchBar img {
+    width: 60px;
+    height: 60px;
+}
+
+.searchBar textarea {
+    resize: none;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    color: #564E4E;
+    font-style: italic;
+    box-sizing: border-box;
+    font-family: "Fredoka";
+    width: 100%;
+    padding: 20px 10px;
+    margin: 10px 5px 10px 10px;
+}
+
+.searchBar button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    margin-top: 2px;
+}
+
+#suggestionsDechets {
+    font-family: "fredoka";
+    font-style: italic;
+    color: #564E4E;
+    font-size: 18px;
+    position: absolute;
+    top: 80%; /* Juste sous l'input */
+    left: 0;
+    list-style-type: none;
+    width: 100%;
+    border-radius: 8px;
+    background-color: white;
+    z-index: 9;
+    max-height: 300px;
+    overflow-y: scroll; /*pour faire défiler si liste trop longue*/
+    display: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.307);
+    padding: 0;
+  }
+
+#suggestionsDechets li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+/*à mettre pour desktop*/
+/*#suggestionsDechets li:hover {
+    background-color: #f0f0f0;
+}*/
+
+/* Style pour l'overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.overlayContent {
+    background-color: #fff4e7;
+    width: 330px;
+    height: auto;
+    padding: 40px 10px 20px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    font-family: "Fredoka";
+}
+
+.boutonCloseOverlay {
+    position: absolute;
+    top: -5px;
+    right: 5px;
+    background: none;
+    border: none;
+    font-size: 45px;
+    cursor: pointer;
+    color: #4e3d28;
+}
+
+.overlayContent h1 {
+    font-size: 34px;
+    color: #4e3d28;
+    font-family: "Cabin sketch";
+}
+
+.overlayContent p {
+    color: #4e3d28;
+    font-size: 16px;
+}
+
+#overlayImage {
+    width: 250px;
+    height: auto;
+    margin: 0;
+}
+
+#overlayReponse {
+    font-size: 20px;
+    color: #4e3d28;
+}
+
+#calendarFonctionnality, .rechercheDechets {
+    font-family: "fredoka";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url(../Images/carton-body.webp);
+    box-shadow: 0 4px 8px #564e4e61;
+    border-radius: 8px;
+    max-width: 500px;
+    outline: 0.5px solid #4f3e2776;
+    outline-offset: -7px;
+}
+
+#calendarFonctionnality {
+    margin: 0 0 80px 0;
+    width: 90vw;
+    height: auto;
+    padding: 0 10px 30px;
+    max-width: 400px;
+}
+
+.calendarContainer {
+    width: 88vw;
+    height: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 15px 0 35px;
+    padding-bottom: 10px;
+    max-width: 380px;
+    max-height: 550px;
+}
+
+.calendarHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #564E4E;
+    padding: 15px 0;
+    background-color: #edffdc;
+}
+
+.calendarHeader button {
+    background-color: transparent;
+    border: none;
+    color: #564E4E;
+    font-size: 26px;
+    cursor: pointer;
+    margin: 0 15px;
+}
+
+.calendarTitle {
+    font-family: "Cabin sketch";
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin: 40px 0 20px;
+    color: #564E4E;
+    text-shadow:
+      0.5px 0.5px 1px #ffffff,
+      -0.5px 0.5px 1px #ffffff,
+      -0.5px -0.5px 1px #ffffff,
+      0.5px -0.5px 1px #ffffff;
+}
+
+.calendarHeader h3 {
+    margin: 0;
+    color: #564E4E;
+    font-size: 20px;
+    font-family: "fredoka";
+    font-weight: normal;
+}
+
+.calendar {
+    width: 90%;
+    border-collapse: collapse;
+    text-align: center;
+    margin: 0 15px;
+}
+
+.calendar th, .calendar td {
+    color: #564E4E;
+    font-weight: normal;
+    height: 20px;
+    vertical-align: middle; /* Centre le contenu */
+}
+
+.calendar th { 
+    text-transform: uppercase;
+    font-size: 16px;
+    padding: 20px 5px;
+}
+
+.calendar td {
+    font-size: 16px;
+    padding: 15px 5px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* à mettre pour le desktop
+.calendar td:hover {
+    background-color: #f0f0f0; 
+} */
+
+.calendar td.jour {
+    color: #ffffff;
+    font-weight: bolder;
+    background: #5dc5018d;
+    border-radius: 50%;
+}
+
+.calendar td.moisSuivantPrecedent {
+    color: #b4b4b4;
+    cursor: default;
+    background: none;
+    font-size: 14px;
+}
+
+.noteIcone {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 14px;
+    color: #564E4E;
+}
+
+/* overlay liste */
+.overlayListeTaches {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 30;
+}
+
+.containerTaches {
+    background: white;
+    padding: 0 20px 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 78%;
+    max-width: 500px;
+    height: 700px; /* Limite la hauteur */
+    position: relative;
+    margin-top: 40px;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    font-size: 24px;
+    color: #564E4E;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+#tacheDate {
+    font-size: 26px;
+    margin: 45px 0 10px;
+    font-family: 'cabin sketch';
+    text-align: center;
+}
+
+.listeDeTache {
+    
+    padding: 0;
+    margin: 0;
+}
+
+.listeDeTache li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.listeDeTache li:last-child {
+    border-bottom: none;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#chatLogan {
+    width: 140px;
+    height: auto;
+    position: absolute;
+    right: -13px;
+    bottom: -30px;
+}
+
+
+                        /* memo*/
+#memoContainer {
+    background-color: #0c4920;
+    border: sienna solid 8px;
+    border-radius: 8px;
+    padding: 10px 0;
+    text-align: center;
+    margin: 20px 5px 30px;
+    width: 90%;
+    height: auto;
+    padding-bottom: 20px;
+}
+
+#memoContainer img {
+    width: 50px;
+    height: 50px;
+}
+
+#memoContainer h2 {
+    color: white;
+    font-family: "cabin sketch";
+    font-size: 22px;
+    margin: 0 0 25px 25px;
+}
+
+#memoContainer p {
+    font-size: 12px;
+    color: white;
+    margin: 0 0 20px;
+}
+
+
+#ajoutNote {
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px 5px;
+    border-radius: 8px;
+    font-family: "fredoka";
+    width: 85%;
+}
+
+#noteInput {
+    border: none;
+    width: 60%;
+    height: 20px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    font-family: "fredoka";
+    margin-right: 5px;
+}
+
+#noteList li {
+    margin: 5px 0;
+    padding: 0;
+    list-style-type: none;
+    max-width: 80%;
+}
+
+.supprimer {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.noteItem {
+    margin: 5px 0;
+ }
+
+.item { 
+    cursor: pointer;
+    padding: 2px 8px;
+    font-size: 18px;
+    transition: 0.2s;
+    color: #fff;
+    font-family: "fredoka";
+    width: 80px;
+    
+                    /* trouver comment réduire la ligne*/
+}
+
+
+/* .noteItem:hover { 
+    color: grey;
+} */
+
+.itemRayee {
+    text-decoration: line-through;
+    color: grey;
+}
+
+
+/* Style the "Add" button */
+#boutonAjoutNote {
+    padding: 10px;
+    width: auto;
+    height: auto;
+    background-color: #564E4E;
+    font-family: "fredoka";
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor:pointer;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.downMenu {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: auto;
+    max-width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 75px;
+    margin-top: 50px;
+}
+
+.downMenu  img {
+    width: 40px;
+    height: 40px;
+    margin: 5px 0 10px 0;
+}
+
+.downMenu  a {
+    border: solid 8px #5bc501;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-family: "fredoka";
+    font-size: 20px;
+    text-align: center;
+    text-decoration:none;
+    color: #564E4E;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-right: 20px;
+    background-color: white;
+    box-shadow: 0px -2px 2px 0px #564e4e5d;
+    position: relative;
+}
+
+#liens {
+    z-index: 0;
+}
+
+#guide {
+    z-index: 1; 
+    top: -8px; 
+}
+
+/* #calendrier {
+    z-index: 2;
+    top: -30px;
+} */
+
+#verAnime {
+    width: 80px;
+    height: auto;
+    margin: 20px 0 20px 30px;
+}
+
+@media (min-width: 1000px) {
+    .rechercheDechets {
+        width: 360px;
+        margin-right: 50px;
+        align-self: self-start;
+    }
+
+    #fonctionsPremieres {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #verAnime {
+        display: none;
+    }
+
+    #calendarFonctionnality, .rechercheDechets {
+        margin-top: 80px;
+    }
+
+    #calendarFonctionnality {
+        margin-left: 50px;
+    }
+}

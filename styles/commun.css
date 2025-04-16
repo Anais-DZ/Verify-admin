@@ -1,0 +1,503 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Fredoka:wght@300..700&display=swap'); */
+
+main {
+    width: 100%;
+    background: url(../Images/bg-body.webp);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+header, footer {
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+    height: 150px;
+    width: 100vw;
+    margin-top: 59px;
+    outline: 2px solid #ffffff;
+    outline-offset: -8px;
+    background-image: url(../Images/header.webp);
+}
+
+footer {
+    height: 130px;
+    width: 100vw;
+    justify-content: flex-end;
+    box-shadow: 0 0 30px 16px rgba(255, 255, 255, 0.4);
+    background: linear-gradient(180deg, rgba(220,255,197,1) 12%, rgba(227,242,223,1) 22%, rgba(139,201,124,1) 30%, rgba(28,150,0,1) 31%);
+}
+
+header h1 {
+    color: white;
+    font-family: "fredoka";
+    font-size: 47px;
+    margin: 15px 0 0;
+    padding: 10px 10px 50px;
+    text-align: center;
+    text-shadow:
+        0.5px 0.5px 3px #024821,
+        -0.5px 0.5px 3px #024821,
+        -0.5px -0.5px 3px #024821,
+        0.5px -0.5px 3px #024821;
+    z-index: 1;
+}
+
+#retourAccueil {
+  width: 95px;
+  height: auto;
+  position: relative;
+  top: -50px;
+  left: 0;
+  z-index: 10;
+}
+
+#logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+#dessinHerbeFooter {
+    width: 100vw;
+    height: 110px;
+    position: relative;
+    z-index: 2;
+    top: -25px;
+}
+
+#entete {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0 0;
+    background: #ffffff;
+    position: fixed;
+    z-index: 1000;  
+}
+
+#entete img {
+    width: 50px;
+    height: 50px;
+}
+
+/*menu rideau*/
+.menuToggler {  /*le bouton du menu */
+    height: 50px;
+    width: 50px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: transparent;
+}
+
+.line {
+    position: absolute;
+    display: block;
+    width: 45px;
+    height: 2px;
+    border-radius: 5px;
+    background: #1c9600;
+    transition: transform 0.3s ease-out;
+    opacity: 0.1s ease-out;
+}
+
+.line1 {
+    transform: translateY(-11px);
+}
+
+.line3 {
+    transform: translateY(11px);
+}
+
+.menuToggler.active .line1 {
+    transform: translateY(0) rotate(135deg);
+}
+
+.menuToggler.active .line2 {
+    opacity: 0;
+}
+
+.menuToggler.active .line3 {
+    transform: translateY(0) rotate(-135deg);
+}
+
+.menuToggler {
+    margin-right: 25%;
+}
+
+#userButton {
+    margin-left: 25%;
+    margin-bottom: 3px !important;
+    width: 48px !important;
+    height: 48px !important;
+}
+
+.leftMenuDesktop {
+    display: none;
+}
+
+.leftMenu {
+    position: fixed;
+    width: 80vw; /*80% de l'écran*/
+    max-width: 280px;
+    min-height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(to right bottom, #008742, #40a048, #6aba4e, #94d353, #c0ec59);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.307);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding: 30px 0;
+}
+
+.leftMenu {
+    transform: translateX(-125%);
+    transition: transform 0.7s cubic-bezier(0.18,0.89,0.32,1.27);
+    z-index: 9;
+    margin-top: 480px;
+}
+
+.leftMenu.active {
+    transform: translate(-57px);
+}
+
+.leftMenu a { 
+    width: 85%;
+    font-family: "fredoka";
+    font-size: 22px;
+    color: #564E4E;
+    text-decoration: none;
+    margin: 1px 0;
+    background: #fefffa;
+    padding: 10px 0px 10px 20px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+#deconnexion {
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 25px 0 0;
+    text-align: center;
+    padding-left: 0;
+    border-radius: 8px;
+    opacity: 0.7;
+}
+
+#deconnexion img {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+
+#deconnexionDesktop {
+    display: none;
+}
+
+
+/* menu connexion*/
+.rightMenu a {
+    font-family: "Fredoka";
+    color: #689e58;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.rightMenu p {
+    font-family: "Fredoka";
+    color: #564E4E;
+    text-align: center;
+    margin: 0;
+    font-size: 18px;
+}
+
+.rightMenu label {
+    font-family: "Fredoka";
+    display: inline-block;
+    font-size: 18px;
+    color: #564E4E;
+    margin: 35px 0 4px 0;
+}
+
+.rightMenu h2 {
+    font-family: "Cabin sketch";
+    font-size: 32px;
+    text-align: center;
+    margin: 15px 0 10px;
+    color: #564E4E;
+}
+
+#checkbox {
+    width: auto;
+    margin-right: 10px; /*changer la couleur avec javascript ???*/
+}
+
+.checkboxContainer {
+    display: flex;
+    align-items: center;
+}
+
+.checkboxContainer label {
+    margin: 10px 0 !important;
+    font-size: 14px !important;
+}
+
+.rightMenu {
+    background: #fefffa;
+    border: 14px solid #94d353;
+    /* border-image: linear-gradient(to right bottom, #008742, #40a048, #6aba4e, #94d353, #c0ec59); */
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    position: fixed;
+    width: 75vw;
+    max-width: 350px;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.8s cubic-bezier(0.18,0.89,0.32,1.27);
+    z-index: 9;
+    margin-top: 27px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.307);
+    cursor:pointer ; /* le pointer n'apparaît plus ! à corriger*/
+}
+
+.rightMenu.active {
+    transform: translate(-178px);
+}
+
+.rightMenu input {
+    border: 1px solid #94d353;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    font-size: 14px;
+    font-style: italic;
+    box-sizing: border-box;
+    font-family: 'Fredoka';
+    padding: 10px 10px;
+}
+
+.initialisation input:focus, .contact input:focus, .inscription input:focus, .rightMenu input:focus  {
+    background:#c0ec5923;
+    color: black;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.rightMenu label {
+    margin-top: 20px;
+}
+
+#submitButtonMenu {
+    background-color: #564E4E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor:pointer;
+    font-size: 22px;
+    font-family: "Cabin Sketch";
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.523);
+    text-align: center;
+    margin: 10px 0 20px 38px;
+    padding: 10px 10px;
+    width: 75%;
+}
+
+#identifiantMenuError, #passwordMenuError {
+    color: rgb(210, 19, 19);
+    font-family: "fredoka";
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* A remettre quand la fonction JS sera faite */
+#submitButtonMenu:disabled {
+    background-color: rgba(255, 0, 0, 0.162);
+    cursor: not-allowed;
+}
+
+#forgettenPassword, #forgettenPasswordConnexionDesktop {
+    font-family: "Fredoka";
+    font-size: 15px;
+    font-weight:normal;
+    color: #564E4E;
+    text-align: center;
+    margin: 15px 0 0;
+}
+
+
+.separation {
+    width: 30%;
+    height: 1px;
+    background-color: #564E4E;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+    border-radius: 50%;
+}
+
+/* ne s'affiche plus dans les footer, à corriger */
+#contactLien {
+    font-size: 32px;
+    text-decoration: none;
+    color: white;
+    font-family: "fredoka";
+    text-shadow:
+        0.5px 0.5px 1px #187b27,
+        -0.5px 0.5px 1px #187b27,
+        -0.5px -0.5px 1px #187b27,
+        0.5px -0.5px 1px #187b27;
+    position: relative;
+    top: 115px;
+    z-index: 4;
+}
+
+footer p {
+    font-size: 14px;
+    color: white;
+    font-family: "fredoka";
+    margin: 10px 0;
+}
+
+.attribution {
+    font-size: 15px !important;
+    color: white;
+}
+
+.constructionButton {
+    font-size: 17px !important;
+    color: rgb(210, 43, 43) !important;
+    font-style: italic;
+    margin: 10px 25px 0 !important;
+}
+
+#constructionButton { /* paragraphe du menu*/
+    font-size: 12px;
+    color: rgb(210, 43, 43);
+    font-style: italic;
+    margin: 0;
+}
+
+@media (max-width: 360px) {
+    header h1 {
+        margin-top: 0px;
+    }
+
+    #retourAccueil {
+        top: -57px;
+        left: 0;
+        z-index: 2;
+    }
+}
+
+@media (min-width: 760px) {
+
+    header {
+        height: 170px;
+        margin: 0;
+        outline-offset: -8px;
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 62px;
+        backdrop-filter: none;
+        background: none;
+        padding: 35px 0 0;
+        margin: 0;
+    }
+
+    #retourAccueil {
+        width: 110px;
+        position: relative;
+        top: -5px;
+        left: 5px;
+    }
+
+
+    #entete {
+        display: none;
+    }
+
+    .leftMenuDesktop {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .lienMenuDesktop { 
+        font-family: "fredoka";
+        font-size: 22px;
+        color: #564E4E;
+        text-decoration: none;
+        background: #fefffa;
+        padding: 0;
+        margin: 20px 10px;
+        align-items: center;
+    }
+
+    .lienMenuDesktop:hover {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        text-decoration-thickness: 1.2px;
+        transform: scale(1.1);
+        font-weight: 500;
+    }
+
+    #deconnexionDesktop {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    #deconnexionDesktop img {
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
+        display: none;
+    }
+
+    header {
+        justify-content: center;
+        align-items: stretch;
+    }
+
+    #dessinHerbeFooter {
+        display: none;
+    }
+
+    #contactLien {
+        top: 0;
+        z-index: 4;
+    }
+
+    footer {
+        width: 100%;
+    }
+}

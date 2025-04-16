@@ -1,0 +1,102 @@
+.links {
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.links h2 {
+    font-family: "Cabin sketch";
+    font-size: 30px;
+    font-weight:bold;
+    color: #564E4E;
+    text-align: center;
+    margin: 15px 0;
+}
+
+.separationLinksMin, .separationLinksMax {
+    width: 95%;
+    height: 1px;
+    background-color: #564E4E;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2px;
+}
+
+.separationLinksMax {
+    height: 3px;
+}
+
+.listSites {
+    font-family: "fredoka";
+    font-size: 22px !important ;
+    font-weight:500;
+    color: #564E4E;
+    margin: 45px 10px 45px 0;
+    list-style-type: none;
+    font-size: 24px;
+    padding: 20px 0 10px;
+}
+
+.linksList a {
+    margin-left: 5px;
+}
+
+.linksList a:hover { 
+    background-color: #3ab14c4e;
+}
+
+.linksList a:visited {
+    color: #42cf54;
+}
+
+.linksList a, #suggestionSiteButton a {
+    font-family: 'Fredoka';
+    text-decoration: none;
+    color: #564E4E;
+    font-size: 18px;
+    margin: 0; 
+}
+
+#suggestionSiteButton a {
+    font-size: 21px;
+}
+
+.linksList li {
+    margin: 15px 0;
+}
+
+
+#suggestionSiteButton {
+    position: relative;
+    background: url(../Images/carton-body.webp);
+    text-align: center;
+    margin: 40px 0 20px;
+    height: auto;
+    max-width: 330px;
+    border-radius: 8px;
+    padding: 25px 20px;
+    border: none;
+    box-shadow: 0 4px 8px #564e4e61;
+    outline: 0.5px solid #564e4e76;
+    outline-offset: -6px;
+}
+
+#webSiteLinks {
+    margin-top: 20px;
+}
+
+article {
+    box-shadow: 0 4px 8px #564e4e2f;
+    width: 95vw;
+    max-width: 650px ;
+    height: auto;
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px 0 20px 0;
+}
+
+#webSiteLinks, .linksList {
+    padding: 0 20px;
+    list-style-type: none;
+}

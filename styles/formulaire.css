@@ -1,0 +1,99 @@
+.inscription, .contact, .initialisation {
+    padding: 70px 0 60px;
+}
+
+.inscription form, .contact form, .initialisation form, .administrationForm {
+    width: 90%;
+    height: auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 135px 0 50px 0;
+}
+
+.inscription legend, .contact legend, .initialisation legend {
+    position: relative;
+    width: 200px;
+    padding: 0;
+    margin-left: 45px;
+    color: rgba(0, 0, 0, 0);
+}
+
+.inscription fieldset, .contact fieldset, .initialisation fieldset {
+    position: relative;
+    background-color: #fefffa;
+    border: 10px solid #c0ec59;
+    border-radius: 8px;
+    width: 75vw;
+    height: auto;
+    position: relative;
+    bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.inscription fieldset, .initialisation fieldset {
+    max-width: 280px;
+}
+
+.contact fieldset {
+    max-width: 400px;
+}
+
+.inscription h2, .contact h2, .initialisation h2 {
+    font-family: "Cabin sketch";
+    font-size: 26px;
+    color: #564E4E;
+    text-align: center;
+    margin: 30px 40px;
+}
+
+.inscription h2 {
+    font-size: 23px !important;
+}
+
+.inscription p, .contact p, .initialisation p {
+    font-family: 'Fredoka condensed';
+    font-size: 18px;
+    font-weight:normal;
+    color: #564E4E;
+    text-align: center;
+    margin: 0 20px 10px;
+}
+
+.initialisation input, .contact input, .inscription input, .contact textarea {
+    border: 1px solid #c0ec59;
+    width: 100%;
+    border-radius: 5px;
+    color: #564E4E;
+    font-size: 16px;
+    font-style: italic;
+    box-sizing: border-box;
+    font-family: 'Fredoka';
+    padding: 10px 10px;
+}
+
+
+.inscription label, .contact label, .initialisation label {
+    font-family: 'Fredoka';
+    display: block;
+    font-size: 18px;
+    color: #564E4E;
+    margin: 25px 0 5px 0;
+}
+
+/* Message d'erreur des formulaires d'initialisation et d'inscription*/
+#loginUserErrorMessage, #passwordErrorMessage1, #passwordErrorMessage2, #nomErrorMessage  {
+    color: rgb(210, 19, 19);
+    font-family: "fredoka";
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#checkboxInitialisation, #checkboxInscription, #checkboxConnexionDesktop {
+    width: auto;
+    margin-right: 10px; /*changer la couleur avec javascript ???*/
+}
