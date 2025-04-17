@@ -233,7 +233,7 @@
             $wastesTable .= "<tr>
                                 <td>{$waste['name_waste']}</td>
                                 <td>{$waste['id_waste']}</td>
-                                <td>{$waste['type_container']}</td>
+                                <td id='container'>{$waste['type_container']}</td>
                                 <td>{$waste['id_container']}</td>
                                 <td>
                                     <form method='POST' action='index.php'>
