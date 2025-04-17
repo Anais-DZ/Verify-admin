@@ -112,10 +112,11 @@ td {
     cursor:pointer;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 590px) {
 
     table {
         width: 70vw;
+        max-width: 650px;
         height: auto;
         background-color: white;
         padding: 20px 5px;
