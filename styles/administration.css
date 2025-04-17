@@ -112,6 +112,14 @@ td {
     cursor:pointer;
 }
 
+@media (max-width: 585px) {
+
+    #container {
+        display: none;
+    }
+
+}
+
 @media (min-width: 590px) {
 
     table {
@@ -130,5 +138,4 @@ td {
     #titleList {
         margin-top: 35px;
     }
-
 }
