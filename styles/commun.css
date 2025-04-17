@@ -234,7 +234,7 @@ footer p {
     }
 }
 
-@media (min-width: 760px) {
+@media (min-width: 700px) {
 
     header {
         height: 170px;
