@@ -1,7 +1,6 @@
 <?php
 
     //INCLUDES
-    // include './env.php';
     include './utils/utils.php';
     include './model/modelWaste.php';
     include './model/modelContainer.php';
@@ -237,7 +236,7 @@
                                 <td>{$waste['type_container']}</td>
                                 <td>{$waste['id_container']}</td>
                                 <td>
-                                    <form method='POST' action=''>
+                                    <form method='POST' action='index.php'>
                                         <input type='hidden' name='idWaste' value={$waste['id_waste']}>
                                         <button class='delete' type='submit' name='submitDeleteById'>X</button>
                                     </form>
