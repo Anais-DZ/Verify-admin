@@ -4,7 +4,6 @@
 session_start();
 
 //INCLUDES
-include './env.php';
 include './utils/utils.php';
 include './model/modelUser.php';
 include './view/viewHeader.php';
