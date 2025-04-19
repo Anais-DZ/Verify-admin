@@ -232,10 +232,10 @@
             foreach ($data as $waste) {
                 // Ajoute un élément au tableau avec le nom du déchet, l'id du déchet, l'id du container et le type du container
             $wastesTable .= "<tr>
-                                <td>{$waste['name_waste']}</td>
-                                <td>{$waste['id_waste']}</td>
+                                <td class='idWasteContainer>{$waste['name_waste']}</td>
+                                <td class='idWasteContainer>{$waste['id_waste']}</td>
                                 <td class='containerColumn'>{$waste['type_container']}</td>
-                                <td>{$waste['id_container']}</td>
+                                <td class='idWasteContainer>{$waste['id_container']}</td>
                                 <td>
                                     <form method='POST' action='adminWaste.php'>
                                         <input type='hidden' name='idWaste' value={$waste['id_waste']}>

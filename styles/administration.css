@@ -126,6 +126,10 @@ td {
         margin: 10px 2px;
     }
 
+    .idWasteContainer {
+        padding : 5px 0; 
+    }
+
 }
 
 @media (min-width: 590px) {
