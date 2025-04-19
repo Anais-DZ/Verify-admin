@@ -69,7 +69,7 @@
                                     <th class='idWasteContainer'>id Déchet</th>
                                     <th class='containerColumn'>Type de Container</th>
                                     <th class='idWasteContainer'>id Container</th>
-                                    <th class='idWasteContainer>Supprimer</th>
+                                    <th class='idWasteContainer'>Supprimer</th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -236,7 +236,7 @@
                                 <td class='idWasteContainer>{$waste['id_waste']}</td>
                                 <td class='containerColumn'>{$waste['type_container']}</td>
                                 <td class='idWasteContainer>{$waste['id_container']}</td>
-                                <td>
+                                <td class='idWasteContainer>
                                     <form method='POST' action='adminWaste.php'>
                                         <input type='hidden' name='idWaste' value={$waste['id_waste']}>
                                         <button class='delete' type='submit' name='submitDeleteById'>X</button>
