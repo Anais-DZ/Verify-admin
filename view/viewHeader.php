@@ -31,9 +31,8 @@
                     <link href='https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Fredoka:wght@300..700&display=swap' rel='stylesheet'>
                     <link href='./styles/index.css' rel='stylesheet'>
                     <link href='./styles/commun.css' rel='stylesheet'>
-                    <link href='./styles/inscription.css' rel='stylesheet'>
-                    <link href='./styles/formulaire.css' rel='stylesheet'>
                     <link href='./styles/administration.css' rel='stylesheet'>
+                    <link href='./styles/connexionAdmin.css' rel='stylesheet'>
                     <title>Page - Administration</title>
                 </head>
                 <body>
