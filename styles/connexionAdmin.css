@@ -1,0 +1,204 @@
+main {
+    width: 100%;
+    background-color: rgb(253, 255, 246);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10px !important;
+}
+
+.identificationAdmin {
+    box-shadow: 0 4px 8px #564e4e2f;
+    width: 95vw;
+    max-width: 650px;
+    height: auto;
+    background-color: white;
+    border-radius: 8px;
+    padding: 15px 0 10px 0 !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0 60px 0;
+}
+
+.lineMin,
+.lineMax {
+    width: 95%;
+    height: 1px;
+    background-color: #564E4E;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2px;
+}
+
+.lineMax {
+    height: 3px;
+}
+
+.identificationAdmin img {
+    width: 170px;
+    height: auto;
+    left: 2px;
+    top: -95px;
+    position: absolute;
+}
+
+.submitButton {
+    background-color: #564E4E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 24px;
+    font-family: 'Cabin Sketch';
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.523);
+    text-align: center;
+    margin: 10px 0 10px;
+    padding: 10px 25px;
+}
+
+#submitButtonInscription {
+    margin-bottom: 20px !important;
+}
+
+
+.submitButton:disabled {
+    background-color: rgba(255, 0, 0, 0.162);
+    cursor: not-allowed;
+}
+
+#togglePassword {
+    position: relative;
+    bottom: -47px;
+    right: -247px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+h3 {
+    font-family: 'Fredoka';
+    font-size: 22px;
+    font-weight: 500;
+    color: #564E4E;
+    margin: 0 0 45px;
+    z-index: 200;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.519);
+}
+
+#connectionAdmin,
+#inscriptionAdmin {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 55px 0 0 0;
+}
+
+.identificationAdmin legend {
+    position: relative;
+    width: 200px;
+    padding: 0;
+    margin-left: 45px;
+    color: rgba(0, 0, 0, 0);
+}
+
+.identificationAdmin fieldset {
+    position: relative;
+    background-color: #fefffa;
+    border: 10px solid #c0ec59;
+    border-radius: 8px;
+    width: 75vw;
+    max-width: 500px;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px 0;
+}
+
+.identificationAdmin input {
+    border: 1px solid #c0ec59;
+    width: 100%;
+    border-radius: 5px;
+    color: #564E4E;
+    font-size: 16px;
+    font-style: italic;
+    box-sizing: border-box;
+    font-family: 'Fredoka';
+    padding: 10px 10px;
+}
+
+.identificationAdmin input:focus {
+    background: #c0ec5923;
+    color: black;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+
+.identificationAdmin h2 {
+    font-family: "Cabin sketch";
+    font-size: 26px;
+    color: #564E4E;
+    text-align: center;
+    margin: 20px 20px;
+}
+
+.identificationAdmin p {
+    font-family: 'Fredoka condensed';
+    font-size: 18px;
+    font-weight: normal;
+    color: #564E4E;
+    text-align: center;
+    margin: 0 20px 10px;
+}
+
+.identificationAdmin label {
+    font-family: 'Fredoka';
+    display: block;
+    font-size: 18px;
+    color: #564E4E;
+    margin: 25px 0 5px 0;
+}
+
+/* Message d'erreur des formulaires de connexion et d'inscription*/
+#loginUserErrorMessage,
+#passwordErrorMessage1,
+#passwordErrorMessage2,
+#identifiantErrorMessageConnectionAdmin,
+#passwordErrorMessageConnectionAdmin,
+#mailErrorMessage {
+    color: rgb(210, 19, 19);
+    font-family: "fredoka";
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+#forgottenPasswordConnectionAdmin {
+    font-family: "Fredoka";
+    font-size: 15px;
+    font-weight: normal;
+    color: #564E4E;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#checkboxConnectionAdmin,
+#checkboxInscription {
+    width: auto;
+    margin-right: 10px;
+    /*changer la couleur avec javascript ???*/
+}
+
+.checkboxContainer {
+    display: flex;
+    align-items: center;
+}
+
+.checkboxContainer label {
+    margin: 10px 10px 10px 0 !important;
+    font-size: 14px !important;
+}

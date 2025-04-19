@@ -259,7 +259,7 @@
                 $loginUser= $this->getLoginUser();
 
                 //préparer la requête
-                $req = $this->getBdd()->prepare("SELECT id_user, login_user, mail_user, password_user FROM users WHERE login_user = ? LIMIT 1 ");
+                $req = $this->getBdd()->prepare("SELECT id_user, login_user, mail_user, password_user, id_role FROM users WHERE login_user = ? LIMIT 1 ");
 
                 //Binding de param
                 $req->bindParam(1, $loginUser, PDO::PARAM_STR);

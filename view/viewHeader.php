@@ -41,7 +41,7 @@
                         <div class='leftMenu'>
                             <a href='index.php' alt='administration'>Ajout des déchet</a>
                             <a href='liens.html' alt='liens ressources'>Liens & Ressources</a>
-                            <a href='compte.html' alt='mon compte'>Connexion</a>
+                            <a href='logout.php' alt='bouton déconnexion'>Déconnexion</a>
                         </div>
                         <button type='button' aria-label='ouvre ferme menu gauche' class='menuToggler'>
                             <span class='line line1'></span>
@@ -64,7 +64,7 @@
                     <div class='leftMenuDesktop'>
                         <a class='lienMenuDesktop' href='index.php' alt='administration'>Ajout des déchet</a>
                         <a class='lienMenuDesktop' href='liens.html' alt='liens ressources'>Liens & Ressources</a>
-                        <a class='lienMenuDesktop' href='compte.html' alt='mon compte'>Connexion</a>
+                        <a class='lienMenuDesktop' href='logout.php' alt='contact'>Déconnexion</a>
                     </div>";
             }
     }

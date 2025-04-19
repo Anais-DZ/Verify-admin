@@ -9,11 +9,19 @@ burgerButton.addEventListener("click", (event) => {
     event.stopPropagation(); // Evite la fermeture immédiate du menu
     toggleMenu();
 });
-
+userButton.addEventListener("click", (event) => {
+    event.stopPropagation(); // Evite la fermeture immédiate du menu
+    toggleUser();
+});
 
 function closeMenu() {
     burgerButton.classList.remove("active");
     leftMenu.classList.remove("active");
+}
+
+function closeUser() {
+    rightMenu.classList.remove("active");
+    userButton.setAttribute("src", "./Icones/user.png");
 }
 
 document.addEventListener("click", (event) => {
@@ -21,17 +29,41 @@ document.addEventListener("click", (event) => {
     if (!leftMenu.contains(event.target) && !burgerButton.contains(event.target)) {
         closeMenu();
     }
+
+    if (!rightMenu.contains(event.target) && !userButton.contains(event.target)) {
+        closeUser();
+    }
 });
 
 function toggleMenu() {
+    // Ferme le menu utilisateur si ouvert
+    closeUser();
 
     // Basculer l'état du menu gauche
     burgerButton.classList.toggle("active");
     leftMenu.classList.toggle("active");
 }
 
+function toggleUser() {
 
-                    // Fonction pour les placeholders
+    // Ferme le menu gauche si ouvert
+    closeMenu();
+
+    // Basculer l'état du menu utilisateur
+    rightMenu.classList.toggle("active");
+
+    if (rightMenu.classList.contains("active")) {
+        // Si la classe "active" est présente
+        userButton.setAttribute("src", "./Icones/close.png");
+    } else {
+        // Sinon
+        userButton.setAttribute("src", "./Icones/user.png");
+    }
+}
+
+
+
+// Fonction pour les placeholders
 // Sélectionne tous les inputs et les textarea avec un attribut placeholder
 const inputs = document.querySelectorAll("input[placeholder]");
 const textareas = document.querySelectorAll("textarea[placeholder]");

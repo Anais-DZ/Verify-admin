@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-                            // Fonctions recherche des déchets
+// Fonctions recherche des déchets
 
 //la variable tabDechet stocke un tableau d'objets contenant les données récupérées depuis l'api
 const tabDechet = [];

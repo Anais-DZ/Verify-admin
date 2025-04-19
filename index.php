@@ -1,289 +1,192 @@
 <?php
 
-    //INCLUDES
-    include './utils/utils.php';
-    include './model/modelWaste.php';
-    include './model/modelContainer.php';
-    include './view/viewHeader.php';
-    include './view/viewFooter.php'; 
-    include './view/viewAdminWaste.php';
-    include './controller/genericController.php';
+// Démarrage de la session
+session_start();
 
-    //Création de la classe AdminController
-    class AdminController extends GenericController {
+//INCLUDES
+include './env.php';
+include './utils/utils.php';
+include './model/modelUser.php';
+include './view/viewHeader.php';
+include './view/viewFooter.php';
+include './view/viewIdentificationUser.php';
+include './controller/genericController.php';
 
-        //ATTRIBUT
-        private ?ViewAdminWaste $viewAdminWaste;
-        private ?ModelWaste $modelWaste;
-        private ?ModelContainer $modelContainer;
+//Création de la classe IdentificationController
+class IdentificationUserController extends GenericController
+{
 
-
-        //CONSTRUCTOR
-        public function __construct(?ViewAdminWaste $viewAdminWaste, ?ModelWaste $modelWaste, ?ModelContainer $modelContainer) {
-            //Paramètres hérités du parent GenericController
-            $this->setHeader(new ViewHeader());
-            $this->setFooter(new ViewFooter());
-            $this->viewAdminWaste = $viewAdminWaste;
-            $this->modelWaste = $modelWaste;
-            $this->modelContainer = $modelContainer;
-        }
+    //ATTRIBUT
+    private ?ViewIdentificationUser $viewIdentificationUser;
+    private ?ModelUser $modelUser;
 
 
-        //GETTER ET SETTER
-        public function getViewAdminWaste(): ?ViewAdminWaste {
-            return $this->viewAdminWaste;
-        }
-
-        public function setViewAdminWaste(?ViewAdminWaste $viewAdminWaste): AdminController {
-            $this->viewAdminWaste = $viewAdminWaste;
-            return $this;
-        }
-
-        public function getModelWaste(): ?ModelWaste {
-            return $this->modelWaste;
-        }
-
-        public function setModelWaste(?ModelWaste $modelWaste): AdminController {
-            $this->modelWaste = $modelWaste;
-            return $this;
-        }
-
-        public function getModelContainer(): ?ModelContainer {
-            return $this->modelContainer;
-        }
-
-        public function setModelContainer(?ModelContainer $modelContainer): AdminController {
-            $this->modelContainer = $modelContainer;
-            return $this;
-        }
-
-
-        //METHOD
-
-        //Enregistrer un déchet avec la fonction registerWaste()
-        public function registerWaste(): string {
-
-            //1_ Vérifier la réception du formulaire
-            if(isset($_POST['submitAddWaste'])) {
-
-                //2_ Vérifier les champs vides
-                if(empty($_POST['nameWaste']) || empty($_POST['idContainer'])) {
-                    return 'Tous les champs ne sont pas remplis';
-                }
-
-                //3_ Nettoyer les données
-                $nameWaste = clean($_POST['nameWaste']);
-                $idContainer = clean($_POST['idContainer']);
-
-                //4_ Vérifier que le déchet n'existe pas déjà en BDD
-                //4.1_ Donner le nom du déchet au Model
-                $this->getModelWaste()->setNameWaste($nameWaste);
-
-                //4.2_ Demander au Model d'utiliser getByNameWaste()
-                $data = $this->getModelWaste()->getByNameWaste();
-
-                //4.3_ Vérifier si les données sont vides ou non
-                if(!empty($data)) {
-                    return 'Ce déchet a déjà été enregistré.';
-                }
-
-                //6_ Enregistrer le déchet en BDD
-                //6.1_ Donner le nom du déchet et l'id du container au ModelWaste
-                $this->getModelWaste()->setNameWaste($nameWaste)->setIdContainer($idContainer);
-
-
-                //6.2_ Demander au model d'utiliser addWaste()
-                $data = $this->getModelWaste()->addWaste();
-
-                //7_ Retourne un message de confirmation
-                return $data; 
-            }
-            return '';
-        }
-
-
-        //Modifier un déchet avec la fonction upDateWaste()
-        public function upDateWaste(): string {
-            ///1_ Vérifier la réception du formulaire
-            if(isset($_POST['submitUpdateWaste'])) {
-
-                //2_ Vérifier les champs vides
-                if(empty($_POST['idWasteUpDate']) || empty($_POST['nameWasteUpDate']) || empty($_POST['newIdContainer'])) {
-                    return 'Remplir tous les champs pour modifier le déchet';
-                }
-
-                //3_ Vérifier le format de l'id
-                if(!filter_var($_POST["idWasteUpDate"], FILTER_VALIDATE_INT)) {
-                    return "L'id n'est pas au bon format";
-                }
-
-                //4_ Nettoyer les données
-                $idWaste = clean($_POST['idWasteUpDate']);
-                $nameWaste = clean($_POST['nameWasteUpDate']);
-                $idContainer = clean($_POST['newIdContainer']);
-
-                //5_ Vérifier que le déchet existe déjà en BDD
-                //5.1_ Donner l'id du déchet au Model
-                $this->getModelWaste()->setIdWaste($idWaste);
-
-                //5.2_ Demander au Model d'utiliser getByIdWaste(), la fonction qui permet de récupérer un déchet par son id
-                $data = $this->getModelWaste()->getByIdWaste();
-
-                //5.3_ Vérifier si les données sont vides ou non
-                if(empty($data)) {
-                    return 'Ce déchet n\'est pas enregistré.';
-                }
-
-                //6_ Modifier le déchet en BDD
-                //6.1_ Donner le nouveau nom du déchet et l'id du container au ModelWaste
-                $this->getModelWaste()->setNameWaste($nameWaste)->setIdContainer($idContainer);
-
-
-                //6.2_ Demander au model d'utiliser changeWaste()
-                $data = $this->getModelWaste()->changeWaste();
-
-                //7_ Retourne un message de confirmation
-                return $data; 
-            }
-            return '';
-        }
-
-
-        //Supprimer un déchet avec la fonction removeWasteById()
-        public function removeWasteById(): string {
-                //1_ Vérifier si le formulaire de modification est submit
-                if (isset($_POST['submitDeleteById'])) {
-
-                    //2_ Vérifier les champs vides
-                //if(empty($_POST['nameWasteToDelete'])) {
-                    //return 'Entrer un nom de déchet';
-                //}
-
-                //3_ Nettoyer les données
-                $idWaste = clean($_POST['idWaste']);
-
-                //4_ Vérifier que le déchet existe déjà en BDD
-                //4.1_ Donner le nom du déchet au Model
-                $this->getModelWaste()->setIdWaste($idWaste);
-
-                //4.2_ Demander au Model d'utiliser getByIdWaste()
-                $data = $this->getModelWaste()->getByIdWaste();
-
-                //4.3_ Vérifier si les données sont vides ou non
-                if(empty($data)) {
-                    return 'Ce déchet n\'a pas été enregistré.';
-                }
-
-                //5_ Demander au modèle de supprimer le déchet en fonction de son id
-                $data = $this->getModelWaste()->deleteWasteById();
-
-                //6_ Retourne un message de confirmation
-                return $data; 
-            }
-            return '';
-        }
-
-        
-        //Autre façon de supprimer un déchet avec la fonction removeWasteByName() : permet de supprimer un déchet en entrant son nom dans le formulaire (permet de ne pas supprimer par "accident" une donnée dans la BDD)
-        public function removeWasteByName(): string {
-            //1_ Vérifier si le formulaire de modification est submit
-            if (isset($_POST['submitDeleteWaste'])) {
-
-                    //2_ Vérifier les champs vides
-                if(empty($_POST['nameWasteToDelete'])) {
-                    return 'Entrer un nom de déchet';
-                }
-
-                //3_ Nettoyer les données
-                $nameWaste = clean($_POST['nameWasteToDelete']);
-
-                //4_ Vérifier que le déchet existe déjà en BDD
-                //4.1_ Donner le nom du déchet au Model
-                $this->getModelWaste()->setNameWaste($nameWaste);
-
-                //4.2_ Demander au Model d'utiliser getByNameWaste()
-                $data = $this->getModelWaste()->getByNameWaste();
-
-                //4.3_ Vérifier si les données sont vides ou non
-                if(empty($data)) {
-                    return 'Ce déchet n\'a pas été enregistré.';
-                }
-
-                //5_ Demander au modèle de supprimer le déchet en fonction de son id
-                $data = $this->getModelWaste()->deleteWasteByName();
-
-                //6_ Retourne un message de confirmation
-                return $data; 
-            }
-            return '';
-        }
-
-        //Fonction pour afficher un tableau avec le nom des déchets, leur id, le type de container et l'id de ce dernier
-        public function readWaste(): string {
-            // 1_ Récupérer la liste des déchets depuis le modèle
-            $data = $this->getModelWaste()->getAllWastes();
-        
-            // 2_ Mettre en forme les données grâce à une boucle
-            // 2.1_ Déclaration de la variable d'affichage
-            $wastesTable = '';
-        
-            // 2.2_Boucle pour parcourir les déchets et créer une ligne de tableau pour chaque déchet
-            foreach ($data as $waste) {
-                // Ajoute un élément au tableau avec le nom du déchet, l'id du déchet, l'id du container et le type du container
-            $wastesTable .= "<tr>
-                                <td>{$waste['name_waste']}</td>
-                                <td>{$waste['id_waste']}</td>
-                                <td id='container'>{$waste['type_container']}</td>
-                                <td>{$waste['id_container']}</td>
-                                <td>
-                                    <form method='POST' action='index.php'>
-                                        <input type='hidden' name='idWaste' value={$waste['id_waste']}>
-                                        <button class='delete' type='submit' name='submitDeleteById'>X</button>
-                                    </form>
-                                </td>
-                            </tr>";
-            }
-            // 3_ Retourner les données formatées
-            return $wastesTable;
-        }
-        //Fonction pour afficher dynamiquement le nom des containers dans la liste des containers
-        public function readContainer():string{
-            //1_ Récupérer la liste des containers
-            $data = $this->getModelContainer()->getAllContainers();
-    
-            //2_ Mettre en forme les donnée grâce à une boucle
-            //2.1_ Déclaration de la variable d'affichage
-            $containersList = '';
-            foreach($data as $container){
-                $containersList.="<option value='{$container['id_container']}'>{$container['type_container']}</option>";
-            }
-    
-            //3_ retourne les données formatées
-            return $containersList;
-        }
-
-        //Fonction pour afficher la vue
-        public function render():void{
-            //Traitement des données
-            $message = $this->registerWaste();
-            $messageDelete = $this->removeWasteById();
-            $messageUpDate = $this->upDateWaste();
-            $wastesTable = $this->readWaste();
-            $containersList = $this->readContainer();
-
-             //Déclaration de la variable d'affichage
-             $script = "<script src='./scripts/commun.js'></script>";
-    
-            //La view reçoit les données
-            $this->getViewAdminWaste()->setMessage($message)->setMessageDelete($messageDelete)->setMessageUpDate($messageUpDate)->setWastesTable($wastesTable)->setContainersList($containersList);
-            $this->getFooter()->setScriptInscription($script);
-    
-            //ON FAIT L'AFFICHAGE FINALE
-            echo $this->getHeader()->displayView();
-            echo $this->getViewAdminWaste()->displayView();
-            echo $this->getFooter()->displayView();
-        }
+    //CONSTRUCTOR
+    public function __construct(?ViewIdentificationUser $viewIdentificationUser, ?ModelUser $modelUser)
+    {
+        //Paramètres hérités du parent GenericController
+        $this->setHeader(new ViewHeader());
+        $this->setFooter(new ViewFooter());
+        $this->viewIdentificationUser = $viewIdentificationUser;
+        $this->modelUser = $modelUser;
     }
 
-    $admin = new AdminController(new ViewAdminWaste(), new ModelWaste(), new ModelContainer());
-    $admin->render();
+
+    //GETTER ET SETTER
+    public function getViewIdentificationUser(): ?ViewIdentificationUser
+    {
+        return $this->viewIdentificationUser;
+    }
+
+    public function setViewIdentificationUser(?ViewIdentificationUser $viewIdentificationUser): IdentificationUserController
+    {
+        $this->viewIdentificationUser = $viewIdentificationUser;
+        return $this;
+    }
+
+    public function getModelUser(): ?ModelUser
+    {
+        return $this->modelUser;
+    }
+
+    public function setModelUser(?ModelUser $modelUser): IdentificationUserController
+    {
+        $this->modelUser = $modelUser;
+        return $this;
+    }
+
+    //METHOD
+
+    //Inscrire un utilisateur avec la fonction registerUser()
+    public function registerUser(): string
+    {
+
+        //1_ Vérifier la réception du formulaire
+        if (isset($_POST['submitAddUser'])) {
+
+            //2_ Vérifier les champs vides
+            if (empty($_POST['loginUser']) || empty($_POST['mailInscription']) || empty($_POST['passwordInscription']) || empty($_POST['passwordInscription2'])) {
+                return 'Tous les champs ne sont pas remplis';
+            }
+
+            //3_ Vérifier le format de l'email
+            if (!filter_var($_POST["mailInscription"], FILTER_VALIDATE_EMAIL)) {
+                return "L'email n'est pas au bon format.";
+            }
+
+            if ($_POST['passwordInscription'] !== $_POST['passwordInscription2']) {
+                return "Les mots de passe ne correspondent pas.";
+            }
+
+            //4_ Nettoyer les données
+            $loginUser = clean($_POST['loginUser']);
+            $mailUser = clean($_POST['mailInscription']);
+            $passwordUser = clean($_POST['passwordInscription']);
+
+            //5_ hasher le mot de passe
+            $passwordUser = password_hash($passwordUser, PASSWORD_BCRYPT);
+
+            //6_ Vérifier que le déchet n'existe pas déjà en BDD
+            //6.1_ Donner le nom du déchet au Model
+            $this->getModelUser()->setMailUser($mailUser);
+
+            //6.2_ Demander au Model d'utiliser getByMailUser()
+            $data = $this->getModelUser()->getByMailUser();
+
+            //6.3_ Vérifier si les données sont vides ou non
+            if (!empty($data)) {
+                return 'Cet email est déjà utilisé par un utilisateur.';
+            }
+
+            //7_ Enregistrer le déchet en BDD
+            //7.1_ Donner le mail et le password au ModelUser (l'email a déjà eté "setté" plus haut au 6.1)
+            $this->getModelUser()->setLoginUser($loginUser)->setPasswordUser($passwordUser);
+
+
+            //7.2_ Demander au model d'utiliser addUser()
+            $data = $this->getModelUser()->addUser();
+
+            //8_ Retourne un message de confirmation
+            return $data;
+        }
+        return '';
+    }
+
+    //Se connecter avec la fonction connectUser()
+    public function connectUser(): string
+    {
+        //1_ Vérifier si le formulaire est submit
+        if (isset($_POST["submitConnectUser"])) {
+
+            //2_ Vérifier que les données ne soient pas vides
+            if (empty($_POST["loginConnection"]) || empty($_POST["passwordConnection"])) {
+                return "Veuillez remplir tous les champs.";
+            }
+
+            //4_ Nettoyer les données avec la fonction clean()
+            $loginConnection = clean($_POST["loginConnection"]);
+            $passwordConnection = clean($_POST["passwordConnection"]);
+
+            //5_ Récupération des données de l'utilisateur en BDD
+            //5.1_ donner au modelUser, le login à aller chercher en BDD
+            $this->getModelUser()->setLoginUser($loginConnection);
+
+            //5.2_demander au modelUser d'utiliser getByLoginUser() pour aller chercher les données et je les conserve dans une variable $data
+            $data = $this->getModelUser()->getByLoginUser();
+
+            //5.3_ Vérifier si les données sont vides ou non
+            if (empty($data)) {
+                return "Email et/ou mot de passe incorrect(s).";
+            }
+
+            //6_ Comparer les mots de passe
+            //pas passwordConnection ici car on cherche le password de l'inscription
+            if (!password_verify($passwordConnection, $data[0]["password_user"])) {
+                return "Email et/ou mot de passe incorrect(s).";
+            }
+
+
+            //7_ J'enregistre l'id, le login et l'email dans la super-globale $_SESSION
+            $_SESSION["id_user"] = $data[0]["id_user"];
+            $_SESSION["login_user"] = $data[0]["login_user"];
+            $_SESSION["mail_user"] = $data[0]["mail_user"];
+            $_SESSION["id_role"] = $data[0]["id_role"];
+
+            //8_ Redirection vers la page adminWaste
+            if ($_SESSION['id_role'] == 2) {
+                header("Location: adminWaste.php");
+                exit();
+            } else {
+                echo "<script>alert('Accès refusé. Vous n\'avez pas les droits nécessaires.');</script>";
+            }
+        }
+
+        return "";
+    }
+
+
+    public function render(): void
+    {
+
+        //Déclaration de la variable d'affichage
+        $script = "<script src='./scripts/identificationUser.js'></script>
+        <script src='./scripts/commun.js'></script>";
+
+        //lancement du traitement des données
+        $messageInscription = $this->registerUser();
+        $messageConnection = $this->connectUser();
+
+        //La view reçoit les données
+        $this->getViewIdentificationUser()->setMessageConnection($messageConnection)->setMessageInscription($messageInscription);
+        $this->getFooter()->setScriptInscription($script);
+
+        //On fait l'affichage finale
+        echo $this->getHeader()->displayView();
+        echo $this->getViewIdentificationUser()->displayView();
+        echo $this->getFooter()->displayView();
+
+    }
+}
+
+$user = new IdentificationUserController(new ViewIdentificationUser(), new ModelUser());
+$user->render();

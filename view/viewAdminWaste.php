@@ -67,7 +67,7 @@
                                 <tr>
                                     <th>Déchet</th>
                                     <th class='idWasteContainer'>id Déchet</th>
-                                    <th id='container'>Type de Container</th>
+                                    <th>Type de Container</th>
                                     <th class='idWasteContainer'>id Container</th>
                                     <th>Supprimer</th>
                                 </tr>
@@ -78,7 +78,7 @@
                         </table>
                         <p class='message'>{$this->getMessageDelete()}</p>
                         
-                        <form method='post' action='index.php' class='adminForm'>
+                        <form method='post' action='adminWaste.php' class='adminForm'>
                             <label for='nameWaste'>Nom du déchet à ajouter</label>
                             <input type='text' name='nameWaste' id='nameWaste' placeholder='Entrer le nom du déchet' required>
                             <label for='idContainer'>Type(s) de container </label>
