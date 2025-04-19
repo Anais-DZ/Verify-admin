@@ -65,11 +65,11 @@
                         <table style='max-width: 1450px;'>
                             <thead>
                                 <tr>
-                                    <th class='idWasteContainer>Déchet</th>
+                                    <th>Déchet</th>
                                     <th class='idWasteContainer'>id Déchet</th>
                                     <th class='containerColumn'>Type de Container</th>
                                     <th class='idWasteContainer'>id Container</th>
-                                    <th class='idWasteContainer'>Supprimer</th>
+                                    <th>Supprimer</th>
                                 </tr>
                             </thead>
                             <tbody>
