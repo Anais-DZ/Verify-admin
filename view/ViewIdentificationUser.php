@@ -80,19 +80,19 @@ class ViewIdentificationUser
                             </legend>
 
                                 <label for='loginUser'>Votre identifiant *</label>
-                                <input type='text' name='loginUser' placeholder='5 caractères min dont 4 lettres' minlength='5' maxlength='25' id='loginUser' autocomplete='on' required />
+                                <input type='text' name='loginUser' placeholder='5 caractères min dont 4 lettres' minlength='5' maxlength='25' id='loginUser' autocomplete='no' required />
                                 <div id='loginUserErrorMessage'></div>
 
                                 <label for='mailInscription'>Votre adresse mail *</label>
-                                <input type='mail' name='mailInscription' placeholder='exemple@mail.com' id='mailInscription' class='password' minlength='8' maxlength='30' autocomplete='on' required />
+                                <input type='mail' name='mailInscription' placeholder='exemple@mail.com' id='mailInscription' class='password' minlength='8' maxlength='30' autocomplete='no' required />
                                 <div id='mailErrorMessage'></div>
                                 
                                 <label for='passwordInscription'>Votre mot de passe *</label>
-                                <input type='password' name='passwordInscription' placeholder='8 caractères min dont 1 majuscule, 1 minuscule et 1 chiffre' id='passwordInscription' class='password' minlength='8' maxlength='30' autocomplete='on' required />
+                                <input type='password' name='passwordInscription' placeholder='8 caractères min dont 1 majuscule, 1 minuscule et 1 chiffre' id='passwordInscription' class='password' minlength='8' maxlength='30' autocomplete='no' required />
                                 <div id='passwordErrorMessage1'></div>
                                 
                                 <label for='passwordInscription2'>Confirmer votre mot de passe *</label>
-                                <input type='password' name='passwordInscription2' placeholder='Entrer à nouveau ce mot de passe' id='passwordInscription2' class='password2' autocomplete='on' required/>
+                                <input type='password' name='passwordInscription2' placeholder='Entrer à nouveau ce mot de passe' id='passwordInscription2' class='password2' autocomplete='no' required/>
                                 <div id='passwordErrorMessage2'></div>
                                 
                             <div class='checkboxContainer'>
