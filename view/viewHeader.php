@@ -33,7 +33,7 @@
                     <link href='./styles/commun.css' rel='stylesheet'>
                     <link href='./styles/administration.css' rel='stylesheet'>
                     <link href='./styles/connexionAdmin.css' rel='stylesheet'>
-                    <title>Page - Administration</title>
+                    <title>Admin | Verify </title>
                 </head>
                 <body>
                     <nav id='entete'>
