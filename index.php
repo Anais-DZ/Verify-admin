@@ -8,7 +8,7 @@ include './utils/utils.php';
 include './model/modelUser.php';
 include './view/viewHeader.php';
 include './view/viewFooter.php';
-include './view/viewIdentificationUser.php';
+include './view/ViewIdentificationUser.php';
 include './controller/genericController.php';
 
 //Création de la classe IdentificationController
