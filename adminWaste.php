@@ -234,10 +234,10 @@
             $wastesTable .= "<tr>
                                 <td>{$waste['name_waste']}</td>
                                 <td>{$waste['id_waste']}</td>
-                                <td>{$waste['type_container']}</td>
+                                <td class='containerColumn'>{$waste['type_container']}</td>
                                 <td>{$waste['id_container']}</td>
                                 <td>
-                                    <form method='POST' action=''>
+                                    <form method='POST' action='adminWaste.php'>
                                         <input type='hidden' name='idWaste' value={$waste['id_waste']}>
                                         <button class='delete' type='submit' name='submitDeleteById'>X</button>
                                     </form>

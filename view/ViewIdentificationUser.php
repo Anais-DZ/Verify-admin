@@ -68,7 +68,7 @@ class ViewIdentificationUser
                         </fieldset>
                     </form>
 
-                    <form method='post' action='identificationUser.php' id='inscriptionAdmin'>
+                    <form method='post' action='index.php' id='inscriptionAdmin'>
                         <h3>Sinon, inscrivez-vous !</h3>
                         <fieldset>
                             <legend>formulaire d'inscription

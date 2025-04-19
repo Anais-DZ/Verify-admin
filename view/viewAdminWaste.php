@@ -67,7 +67,7 @@
                                 <tr>
                                     <th>Déchet</th>
                                     <th class='idWasteContainer'>id Déchet</th>
-                                    <th>Type de Container</th>
+                                    <th class='containerColumn'>Type de Container</th>
                                     <th class='idWasteContainer'>id Container</th>
                                     <th>Supprimer</th>
                                 </tr>
@@ -90,7 +90,7 @@
                             <button class='submitWaste' type='submit' name='submitAddWaste'>Ajouter</button>    
                         </form>
 
-                        <form method='post' action='index.php' class='adminForm'>
+                        <form method='post' action='adminWaste.php' class='adminForm'>
                             <label for='idWasteUpDate'>ID du déchet à modifier</label>
                             <input type='number' name='idWasteUpDate' id='idWasteUpDate' placeholder='id du déchet à modifier' required>
                             <label for='nameWasteUpDate'>Nouveau nom du déchet </label>
@@ -104,7 +104,7 @@
                             <button class='submitWaste' type='submit' name='submitUpdateWaste'>Modifier</button>
                         </form>
 
-                        <form method='post' action='index.php' class='adminForm'>
+                        <form method='post' action='adminWaste.php' class='adminForm'>
                             <label for='nameWasteToDelete'>Nom du déchet à supprimer</label>
                             <input type='text' name='nameWasteToDelete' id='nameWasteToDelete' placeholder='Entrer le nom du déchet'>
                             <button class='submitWaste' type='submit' name='submitDeleteWaste'>Supprimer</button>

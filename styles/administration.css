@@ -114,7 +114,7 @@ td {
 
 @media (max-width: 585px) {
 
-    #container {
+    #containerColumn {
         display: none;
     }
 
