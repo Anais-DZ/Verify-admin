@@ -22,9 +22,6 @@ document.addEventListener("click", (event) => {
 });
 
 function toggleMenu() {
-    // Ferme le menu utilisateur si ouvert
-    closeUser();
-
     // Basculer l'état du menu gauche
     burgerButton.classList.toggle("active");
     leftMenu.classList.toggle("active");
