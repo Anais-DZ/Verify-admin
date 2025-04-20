@@ -33,12 +33,12 @@
                     <link href='./styles/commun.css' rel='stylesheet'>
                     <link href='./styles/administration.css' rel='stylesheet'>
                     <link href='./styles/connexionAdmin.css' rel='stylesheet'>
-                    <title>Admin | Verify </title>
+                    <title>Admin | Verify</title>
                 </head>
                 <body>
                     <nav id='entete'>
                         <div class='leftMenu'>
-                            <a href='index.php' alt='administration'>Ajout des déchet</a>
+                            <a href='adminWaste.php' alt='administration'>Ajout des déchets</a>
                             <a href='liens.html' alt='liens ressources'>Liens & Ressources</a>
                             <a href='logout.php' alt='bouton déconnexion'>Déconnexion</a>
                         </div>
@@ -61,7 +61,7 @@
                         </div>
                     </header>
                     <div class='leftMenuDesktop'>
-                        <a class='lienMenuDesktop' href='index.php' alt='administration'>Ajout des déchet</a>
+                        <a class='lienMenuDesktop' href='adminWaste.php' alt='administration'>Ajout des déchets</a>
                         <a class='lienMenuDesktop' href='liens.html' alt='liens ressources'>Liens & Ressources</a>
                         <a class='lienMenuDesktop' href='logout.php' alt='contact'>Déconnexion</a>
                     </div>";
