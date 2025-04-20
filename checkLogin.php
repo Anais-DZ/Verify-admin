@@ -6,7 +6,7 @@
     // Vérifie si l'utilisateur est connecté
     if (!isset($_SESSION["id_user"])) {
         // Redirige vers la page de connexion
-        header("Location: identificationUser.php"); 
+        header("Location: index.php"); 
         exit();
     }
 ?>
