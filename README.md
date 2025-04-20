@@ -1,6 +1,6 @@
 # Verify Admin
 
-Ce projet est un **module complémentaire** de [Ver'ify Compost](https://github.com/Anais-DZ/Verify-compost).  
+Ce projet est un **module complémentaire** de [Ver'ify Compost](https://verify-compost.vercel.app).  
 Il permet la gestion de la base de données via une interface réservée à l'administrateur du site Ver'ify Compost.
 
 <br/>
@@ -38,4 +38,4 @@ Un administrateur peut :
 ### 🔗 Lien
 
 Le projet est hébergé sur Render :  
-**[https://verify-admin.onrender.com/](https://verify-admin.onrender.com/)**
+**[https://verify-admin.onrender.com](https://verify-admin.onrender.com)**
