@@ -25,7 +25,14 @@
                     <meta charset='UTF-8'>
                     <link rel='icon' href='./Images/logo-site.webp' type='image/x-icon'>
                     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-                    <meta name='description' content='Un site dédié à vous aider à trier facilement et rapidement vos déchets compostables. Découvrez en quelques clics comment simplifier le compostage et adopter des gestes écologiques au quotidien.'>
+                   <meta name='description'content='Découvrez en quelques clics si un déchet est compostable, et apprenez à entretenir votre compost. Simplifiez le tri, réduisez vos déchets et adoptez des gestes écologiques au quotidien.' />
+                    <meta property='og:title' content='Ver'ify Compost | Le guide du compostage' />
+                    <meta property='og:description'content='Découvrez en quelques clics si un déchet est compostable, et apprenez à entretenir votre compost. Simplifiez le tri, réduisez vos déchets et adoptez des gestes écologiques au quotidien.' />
+                    <meta property='og:image'content='https://raw.githubusercontent.com/Anais-DZ/Ver_ify_compost/main/Images/logo-site.png' />
+                    <meta property='og:url' content='https://verify-admin.onrender.com/' />
+                    <meta property='og:type' content='website' />
+                    <meta property='og:locale' content='fr_FR' />
+                    <meta property='og:site_name' content='Ver'ify Admin' />
                     <link rel='preconnect' href='https://fonts.googleapis.com'>
                     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
                     <link href='https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Fredoka:wght@300..700&display=swap' rel='stylesheet'>
