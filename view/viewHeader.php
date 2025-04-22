@@ -45,8 +45,9 @@
                 <body>
                     <nav id='entete'>
                         <div class='leftMenu'>
-                            <a href='adminWaste.php' alt='administration'>Ajout des déchets</a>
-                            <a href='liens.html' alt='liens ressources'>Liens & Ressources</a>
+                            <a href='adminWaste.php' alt='liste déchets'>Déchets</a>
+                            <a href='liens.html' alt='liste liens ressources'>Liens & Ressources</a>
+                            <a href='' alt='liste utilisateurs'>Utilisateurs</a>
                             <a href='logout.php' alt='bouton déconnexion'>Déconnexion</a>
                         </div>
                         <button type='button' aria-label='ouvre ferme menu gauche' class='menuToggler'>
@@ -68,8 +69,9 @@
                         </div>
                     </header>
                     <div class='leftMenuDesktop'>
-                        <a class='lienMenuDesktop' href='adminWaste.php' alt='administration'>Ajout des déchets</a>
-                        <a class='lienMenuDesktop' href='liens.html' alt='liens ressources'>Liens & Ressources</a>
+                        <a class='lienMenuDesktop' href='adminWaste.php' alt='liste déchets'>Ajout des déchets</a>
+                        <a class='lienMenuDesktop' href='liens.html' alt='liste liens ressources'>Liens & Ressources</a>
+                        <a class='lienMenuDesktop' href='' alt='liste utilisateurs'>Utilisateurs</a></a>
                         <a class='lienMenuDesktop' href='logout.php' alt='contact'>Déconnexion</a>
                     </div>";
             }
