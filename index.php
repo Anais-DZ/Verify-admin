@@ -144,6 +144,7 @@ class IdentificationUserController extends GenericController
                 return "Email et/ou mot de passe incorrect(s).";
             }
 
+
             //7_ J'enregistre l'id, le login et l'email dans la super-globale $_SESSION
             $_SESSION["id_user"] = $data[0]["id_user"];
             $_SESSION["login_user"] = $data[0]["login_user"];
