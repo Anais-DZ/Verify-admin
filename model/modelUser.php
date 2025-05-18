@@ -82,7 +82,6 @@
 
 
         //METHOD
-
         //fonction qui ajoute un utilisateur dans la bdd
         public function addUser():string {
             try {

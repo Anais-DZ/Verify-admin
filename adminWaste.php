@@ -247,6 +247,8 @@
             // 3_ Retourner les données formatées
             return $wastesTable;
         }
+
+        
         //Fonction pour afficher dynamiquement le nom des containers dans la liste des containers
         public function readContainer():string{
             //1_ Récupérer la liste des containers

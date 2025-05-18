@@ -58,10 +58,6 @@ class ViewIdentificationUser
                                 <label for='passwordConnectionAdmin'>Votre mot de passe *</label>
                                 <input type='password' name='passwordConnection' placeholder='8 caractères min dont 1 majuscule, 1 minuscule et 1 chiffre' id='passwordConnectionAdmin' class='password' minlength='8' maxlength='30' autocomplete='off' required />
                                 <div id='passwordErrorMessageConnectionAdmin'></div>
-                            <div class='checkboxContainer'>
-                                <input type='checkbox' id='checkboxConnectionAdmin' checked />
-                                <label for='checkboxConnectionAdmin'>Se souvenir de moi</label>
-                            </div>
                             <button id='submitButtonConnectionAdmin' class='submitButton' type='submit' name='submitConnectUser' disabled>Connexion</button>
                             <p class='message'>{$this->getMessageConnection()}</p>
                             <a id='forgottenPasswordConnectionAdmin' href='initialisation.html' alt='réinitialisation du mot de passe'>Mot de passe oublié ?</a>
