@@ -273,7 +273,7 @@ class AdminController extends GenericController
         //2.1_ Déclaration de la variable d'affichage
         $containersList = '';
         foreach ($data as $container) {
-            $containersList .= "<option value='{$container['id_container']}'>{$container['type_container']}</option>";
+            $containersList .= "<option value=". cleanForHTML($container['id_container']) .">". cleanForHTML($container['type_container']) ."</option>";
         }
 
         //3_ retourne les données formatées
