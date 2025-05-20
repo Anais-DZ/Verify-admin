@@ -78,9 +78,9 @@ class IdentificationUserController extends GenericController
             }
 
             //4_ Nettoyer les données
-            $loginUser = clean($_POST['loginUser']);
-            $mailUser = clean($_POST['mailInscription']);
-            $passwordUser = clean($_POST['passwordInscription']);
+            $loginUser = cleanForDB($_POST['loginUser']);
+            $mailUser = cleanForDB($_POST['mailInscription']);
+            $passwordUser = cleanForDB($_POST['passwordInscription']);
 
             //5_ hasher le mot de passe
             $passwordUser = password_hash($passwordUser, PASSWORD_BCRYPT);
@@ -123,8 +123,8 @@ class IdentificationUserController extends GenericController
             }
 
             //4_ Nettoyer les données avec la fonction clean()
-            $loginConnection = clean($_POST["loginConnection"]);
-            $passwordConnection = clean($_POST["passwordConnection"]);
+            $loginConnection = cleanForDB($_POST["loginConnection"]);
+            $passwordConnection = cleanForDB($_POST["passwordConnection"]);
 
             //5_ Récupération des données de l'utilisateur en BDD
             //5.1_ donner au modelUser, le login à aller chercher en BDD
