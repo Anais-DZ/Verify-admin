@@ -76,6 +76,10 @@
                 $nameWaste = clean($_POST['nameWaste']);
                 $idContainer = clean($_POST['idContainer']);
 
+                //! TRES IMPORTANT POUR ENREGISTRER LES MOTS AVEC ACCENT
+                // Décoder les entités HTML
+                $nameWaste = html_entity_decode($nameWaste, ENT_QUOTES, 'UTF-8');
+
                 //4_ Vérifier que le déchet n'existe pas déjà en BDD
                 //4.1_ Donner le nom du déchet au Model
                 $this->getModelWaste()->setNameWaste($nameWaste);
